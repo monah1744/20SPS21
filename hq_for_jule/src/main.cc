@@ -1,8 +1,6 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*- */
 /*
  * main.cc
-shell-init: ошибка получения текущей директории: getcwd: cannot access parent directories: Нет такого файла или каталога
-chdir: ошибка получения текущей директории: getcwd: cannot access parent directories: Нет такого файла или каталога
  * Copyright (C) monah1744 2012 <monah1744@gmail.com>
  * 
 HQ_For_Jule is free software: you can redistribute it and/or modify it
@@ -22,10 +20,24 @@ HQ_For_Jule is free software: you can redistribute it and/or modify it
 #include <iostream>
 #include <stdlib.h>
 #include <locale>
-
+void HQ_1();
 using namespace std;
+
 int main()
 {
-	cout << "Hello world!" << endl;
+	HQ_1();//1. Сжать массив, удалив из него все 0 и заполнить освободившиеся справа элементы значениями -1;
+	
 	return 0;
+}
+void HQ_1()
+{
+	const int M=20;
+	int mass[M];
+	for (i=1;i<=M;i++)
+	{
+		cout<<"Введите "<<i<<"-й"<<" елемент массива : ";
+		cin>>mass[i-1];
+	}
+	//-----------------------------------------------
+	
 }
