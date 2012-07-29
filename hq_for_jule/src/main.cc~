@@ -45,7 +45,7 @@ void HQ_1()
 		cout<<mass[i-1]<<" ";
 		refresh();
 	}
-	cout<<endl<<"press key ... ";
+	cout<<"\npress key ... ";
 	refresh();
 	int x;
 	cout<<endl<<getch()<<endl;
