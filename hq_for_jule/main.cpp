@@ -185,9 +185,7 @@ void HQ_5() // 5.дан массив. выстроить эл-ты в поряд
     cout<<endl<<"begin ...\n ";
 
     int Sch1=0;
-    cout<<"Sch2\n";
     int Sch2=0;
-    cout<<"Sch0\n";
     int Sch0=0;
     int tmp=0;
     bool Chet;
@@ -235,7 +233,6 @@ void HQ_5() // 5.дан массив. выстроить эл-ты в поряд
             }
         }
     }
-
     for (int i=1;i<=M;i++)
     {
         cout<<mass1[i-1]<<" ";
