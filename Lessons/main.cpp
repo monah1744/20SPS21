@@ -11,7 +11,11 @@ void m4();
 void m5();
 void m6();
 void m7();
-void m8();
+void m8();  //функции
+int m8_cub(int x);         //Возвращает куб числа
+int m8_min(int x, int y);  //Возвращает меньшее значение
+int m8_max(int x, int y);  //Возвращает большее значение
+bool m8_pol(int x);             //Возвращает TRUE если положительное число
 
 int main()
 {
@@ -320,7 +324,33 @@ void m7()
 		cout<<endl;
     }
 }
-				//функция меняет параметры местами
+				
 void m8()
 {
+}
+
+int m8(int x)
+{
+    return x*x*x;
+}
+int m8_min(int x, int y)
+{
+    if (x<y)
+        return x;
+    else
+        return y;
+}
+int m8_max(int x, int y)
+{
+    if (x>y)
+        return x;
+    else
+        return y;
+}
+bool m8_pol(int x)
+{
+    if (x>=0)
+        return true;
+    else
+        return false;
 }
