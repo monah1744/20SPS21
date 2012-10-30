@@ -1,3 +1,5 @@
+#include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -29,40 +31,40 @@ void AddPerson(Person **&mod, int &size)
 	Person *TempPerson;
 	char *tmp= new char [255];
 	TempPerson=new Person;
-	system("cls");
+	//system("clear");
 	bool check=false;
 	do
 	{
-		std::cout<<"Введите Имя : ";
+		std::cout<<"Input Name : ";
 		if (!gets(tmp)) exit(-1);
 		TempPerson->Name.FirstName = new char [strlen(tmp)+1];
 		strcpy(TempPerson->Name.FirstName,tmp);
 		if (strlen(TempPerson->Name.FirstName)==0) 
 		{
 			check=true; 
-			std::cout<<"\nИмя не может быть пустым !!!\n";
+			std::cout<<"\nName Not empty !!!\n";
 			continue;
 		}
 		else check=false;
 	}
 	while (check);
 
-	system("cls");
+	//system("clear");
 	check=false;
 	do
 	{
-		std::cout<<"Введите Отчество [] : ";
+		std::cout<<"Input Second Name [] : ";
 		if (!gets(tmp)) exit(-1);
 		TempPerson->Name.ThirdName = new char [strlen(tmp)+1];
 		strcpy(TempPerson->Name.ThirdName,tmp);
 	}
 	while (check);
 
-	system("cls");
+	//system("clear");
 	check=false;
 	do
 	{
-		std::cout<<"Введите Фамилию [] : ";
+		std::cout<<"Input Surname [] : ";
 		if (!gets(tmp)) exit(-1);
 		TempPerson->Name.SecondName = new char [strlen(tmp)+1];
 		strcpy(TempPerson->Name.SecondName,tmp);
@@ -74,13 +76,13 @@ void AddPerson(Person **&mod, int &size)
 	size++;
 	if (size==1)
 	{
-		std::cout<<"База пустая. Попытка создать ..."<<std::endl;
+		//std::cout<<"База пустая. Попытка создать ..."<<std::endl;
 		mod = new Person *[size];
-		std::cout<<"Успешно :)"<<std::endl;
+		//std::cout<<"Успешно :)"<<std::endl;
 	}
 	else
 	{
-		std::cout<<"Попытка добавить ..."<<std::endl;
+		//std::cout<<"Попытка добавить ..."<<std::endl;
 		Person **tmpmod = new Person *[size];
 		for (int i=0; i<size-1; i++)
 			tmpmod[i]=mod[i];
@@ -88,5 +90,5 @@ void AddPerson(Person **&mod, int &size)
 		mod = tmpmod;
 	}
 	mod[size-1]=TempPerson;
-	std::cout<<"Добавление успешно :)"<<std::endl;
+	//std::cout<<"Добавление успешно :)"<<std::endl;
 }

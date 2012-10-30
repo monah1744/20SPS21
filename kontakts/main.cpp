@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void main ()
+int main ()
 {
 	setlocale(LC_ALL,"rus");
 	srand(time(NULL));
