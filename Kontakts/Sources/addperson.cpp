@@ -1,4 +1,4 @@
-#include <contacts.h>
+#include <Header/contacts.h>
 void AddKon(Person **&mod, int &size, Person *TempPerson);
 
 void AddKontakt (Person **&mod, int &size)
@@ -17,22 +17,12 @@ void AddKontakt (Person **&mod, int &size)
 		strcpy(TempPerson->Name.FirstName,tmp);
 		if (strlen(TempPerson->Name.FirstName)==0) 
 		{
-			check=true; 
+			check=true;
+            cls();
 			std::cout<<"\nName Not empty !!!\n";
 			continue;
 		}
 		else check=false;
-	}
-	while (check);
-
-    cls();
-	check=false;
-	do
-	{
-		std::cout<<"Input Second Name [] : ";
-		if (!gets(tmp)) exit(-1);
-		TempPerson->Name.SecondName = new char [strlen(tmp)+1];
-		strcpy(TempPerson->Name.SecondName,tmp);
 	}
 	while (check);
 
@@ -67,14 +57,14 @@ void AddKontakt (Person **&mod, int &size)
     do
     {
         ShowKontakt(TempPerson);
-        std::cout<<"1 - Apply\n2 - Apply & Advanced\n3 - Cancel\nInput Numder : ";
+        std::cout<<"1 - Apply\t2 - Apply & Advanced\t3 - Cancel\nInput Numder : ";
         Key = getchar();
         std::cin.ignore();
         if ((Key>48)&&(Key<52)) check=false;
         else
         {
             cls();
-            std::cout<<"Error Input Number !\nTry Again...\n";
+            std::cout<<"Error Input Number !\tTry Again...\n";
             check=true;
         }
     }

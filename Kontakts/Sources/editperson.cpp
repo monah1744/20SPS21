@@ -1,4 +1,4 @@
-#include <contacts.h>
+#include <Header/contacts.h>
 
 void EditKontakt (Person **&mod, int index)
 {

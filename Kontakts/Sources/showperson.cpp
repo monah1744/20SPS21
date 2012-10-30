@@ -1,11 +1,11 @@
-#include <contacts.h>
+#include <Header/contacts.h>
 
 using namespace std;
 void ShowPerson (Person **&mod,int &size)
 {
     for (int i=0; i<size; i++)
     {
-        cout<<i+1<<"  "<<mod[i]->Name.SurName<<"  "<<mod[i]->Name.FirstName<<"  "<<mod[i]->Name.SecondName<<"  ";
+        cout<<i+1<<"  "<<mod[i]->Name.SurName<<"  "<<mod[i]->Name.FirstName<<"  ";
         if (mod[i]->NumberOfTel>0) cout<<mod[i]->TelNumber[0]<<"\n";
     }
 }
@@ -13,7 +13,7 @@ void ShowPerson (Person **&mod,int &size)
 void ShowKontakt (Person *&mod)
 {
     {
-        cout<<mod->Name.SurName<<"  "<<mod->Name.FirstName<<"  "<<mod->Name.SecondName<<"  ";
+        cout<<mod->Name.SurName<<"  "<<mod->Name.FirstName<<"  ";
         if (mod->NumberOfTel>0) cout<<mod->TelNumber[0]<<"\n";
     }
 }
@@ -51,7 +51,7 @@ int Index(int size)
 void cls()
 {
 #ifdef linux
-    //system("");
+    system("clear");
 #endif
 #ifdef windows
     system("cls");
