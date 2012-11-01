@@ -33,18 +33,19 @@ void DeletePerson (Person **&mod, int &size)
 int Index(int size)
 {
     int tmp;
-    cout<<"Введите индекс контакта : ";
+    cout<<"Введите индекс контакта "<<size<<" : ";
     cin>>tmp;
     cin.ignore();
     if ((tmp>0)||(tmp<=size))
     {
-        return (tmp-1);
+        tmp--;
+        return tmp;
     }
     else 
     {
         cls();
         cout<<"Такого индекса не существует";
-        return Index(size);
+        return (Index(size));
     }
 }
 

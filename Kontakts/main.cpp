@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
             {
                 chck=false;
                 cls();
+                delete [] mas;
                 break;
             }
         };
