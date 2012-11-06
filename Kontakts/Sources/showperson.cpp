@@ -33,6 +33,13 @@ void ShowKontakt (Person *&mod)
     }
 }
 
+void ShowTel(Person *&mod)
+{
+    for (int i=0;i<mod->NumberOfTel;i++)
+    {
+        cout<<"\t"<<mod->TelNumber[i]<<endl;
+    }
+}
 
 
 void SearchPerson (Person **&mod, int &size)
@@ -48,7 +55,7 @@ void DeletePerson (Person **&mod, int &size)
 int Index(int size)
 {
     int N;
-    cout<<"Введите индекс контакта "<<size<<" : ";
+    cout<<"Enter index "<<size<<" : ";
     cin>>N;
     cin.ignore();
     if ((N>0)&&(N<=size))
@@ -59,7 +66,7 @@ int Index(int size)
     else 
     {
         cls();
-        cout<<"Такого индекса не существует";
+        cout<<"Not real Index !!!";
         return (Index(size));
     }
 }

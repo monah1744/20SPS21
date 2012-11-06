@@ -78,7 +78,7 @@ void EditKontakt (Person **&mod, int index)
                   }
               }
           }
-          if(mod[index]->Birthday.Day||mod[index]->Birthday.Month||mod[index]->Birthday.Year)
+          if(mod[index]->Birthday.Day>0||mod[index]->Birthday.Month>0||mod[index]->Birthday.Year>0)
           {
               cout<<"Day of Birhtday ["<<mod[index]->Birthday.Day<<"] : ";
               gets(tmp);
@@ -89,20 +89,85 @@ void EditKontakt (Person **&mod, int index)
               }
 
               cout<<"Month of Birhtday ["<<mod[index]->Birthday.Month<<"] : ";
-              
-              cin>>mod[index]->Birthday.Month;
+              gets(tmp);
+              if (strlen(tmp))
+              {
+                  mod[index]->Birthday.Month=atoi(tmp);
+                  if (mod[index]->Birthday.Month==0) mod[index]->Birthday.Month=-1;
+              }
               cout<<"Year of Birhtday ["<<mod[index]->Birthday.Year<<"] : ";
-              
+              gets(tmp);
+              if (strlen(tmp))
+              {
+                  mod[index]->Birthday.Year=atoi(tmp);
+                  if (mod[index]->Birthday.Year==0) mod[index]->Birthday.Year=-1;
+              }
               cin>>mod[index]->Birthday.Year;
           }
           else
           {
               cout<<"Day of Birhtday [] : ";
-              cin>>mod[index]->Birthday.Day;
+              gets(tmp);
+              if (strlen(tmp))
+              {
+                  mod[index]->Birthday.Day=atoi(tmp);
+                  if (mod[index]->Birthday.Day==0) mod[index]->Birthday.Day=-1;
+              }
               cout<<"Month of Birhtday [] : ";
-              cin>>mod[index]->Birthday.Month;
+              gets(tmp);
+              if (strlen(tmp))
+              {
+                  mod[index]->Birthday.Month=atoi(tmp);
+                  if (mod[index]->Birthday.Month==0) mod[index]->Birthday.Month=-1;
+              }
               cout<<"Year of Birhtday [] : ";
-              cin>>mod[index]->Birthday.Year;
+              gets(tmp);
+              if (strlen(tmp))
+              {
+                  mod[index]->Birthday.Year=atoi(tmp);
+                  if (mod[index]->Birthday.Year==0) mod[index]->Birthday.Year=-1;
+              }
+          }
+          
+          {
+              cout<<"Email ["<<mod[index]->Bussines.Email<<"] : ";
+              gets(tmp);
+              if (strlen(tmp))
+              {
+                  delete [] mod[index]->Bussines.Email;
+                  mod[index]->Bussines.Email = new char [strlen(tmp)+1];
+                  strcpy(mod[index]->Bussines.Email,tmp);
+              }
+          }
+          {
+              cout<<"ICQ ["<<mod[index]->Bussines.ICQ<<"] : ";
+              gets(tmp);
+              if (strlen(tmp))
+              {
+                  delete [] mod[index]->Bussines.ICQ;
+                  mod[index]->Bussines.ICQ = new char [strlen(tmp)+1];
+                  strcpy(mod[index]->Bussines.ICQ,tmp);
+              }
+          }
+          {
+              cout<<"Skype ["<<mod[index]->Bussines.Skype<<"] : ";
+              gets(tmp);
+              if (strlen(tmp))
+              {
+                  delete [] mod[index]->Bussines.Skype;
+                  mod[index]->Bussines.Skype = new char [strlen(tmp)+1];
+                  strcpy(mod[index]->Bussines.Skype,tmp);
+              }
+          }
+          {
+              cout<<"Jabber ["<<mod[index]->Bussines.Jabber<<"] : ";
+              gets(tmp);
+              if (strlen(tmp))
+              {
+                  delete [] mod[index]->Bussines.Jabber;
+                  mod[index]->Bussines.Jabber = new char [strlen(tmp)+1];
+                  strcpy(mod[index]->Bussines.Jabber,tmp);
+              }
           }
           check=true;
           break;
