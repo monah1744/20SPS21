@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     bool chck=true;
     do
     {
-        cout<<"1 - Show\t2 - Add\t\t3 - Edit\t4 - Search\t5 - Delete\t9 - Exit\nInput Number : ";
+        cout<<"1 - Show\t2 - Add\t\t3 - Edit\t4 - Search\t5 - Delete\t9 - Quit\nInput Number : ";
         Key = getchar();
         cls();
         cin.ignore();
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
             {
                 chck=false;
                 cls();
-                delete [] mas;
+                if (size>0) delete [] mas;
                 break;
             }
         };

@@ -22,7 +22,14 @@ void ShowKontakt (Person *&mod)
                 cout<<"\t"<<mod->TelNumber[i]<<endl;
             }
         }
-
+        if (mod->Birthday.Day>0||mod->Birthday.Month>0||mod->Birthday.Year>0)
+        {
+            cout<<"BirthDay : "<<mod->Birthday.Day<<" - "<<mod->Birthday.Month<<" - "<<mod->Birthday.Year<<endl;
+        }
+        if (strlen(mod->Bussines.Email)>0) cout<<"Email : "<<mod->Bussines.Email<<endl;
+        if (strlen(mod->Bussines.ICQ)>0) cout<<"ICQ : "<<mod->Bussines.ICQ<<endl;
+        if (strlen(mod->Bussines.Jabber)>0) cout<<"Jabber : "<<mod->Bussines.Jabber<<endl;
+        if (strlen(mod->Bussines.Skype)>0) cout<<"Skype : "<<mod->Bussines.Skype<<endl;
     }
 }
 
@@ -60,7 +67,7 @@ int Index(int size)
 void cls()
 {
 #ifdef linux
-    //system("clear");
+    system("clear");
 #endif
 #ifdef windows
     system("cls");

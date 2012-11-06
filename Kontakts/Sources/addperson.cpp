@@ -41,12 +41,7 @@ void AddKontakt (Person **&mod, int &size)
 	check=false;
 	do
 	{
-		std::cout<<"Input Telefon [] : ";
-		if (!gets(tmp)) exit(-1);
-        TempPerson->NumberOfTel++;
-        TempPerson->TelNumber = new char *[TempPerson->NumberOfTel];
-        TempPerson->TelNumber[TempPerson->NumberOfTel-1] = new char [strlen(tmp)+1];
-		strcpy(TempPerson->TelNumber[TempPerson->NumberOfTel-1],tmp);
+        AddTel(TempPerson->TelNumber,TempPerson->NumberOfTel);
 	}
 	while (check);
     
@@ -89,20 +84,24 @@ void AddKontakt (Person **&mod, int &size)
     {
     case 49 :   // 49 - "1"
     {
+        cls();
         AddKon(mod,size,TempPerson);
         break;
     }
     case 50 :   // 50 - "2"
     {
+        cls();
         AddKon(mod,size,TempPerson);
-        EditKontakt (mod,size);
+        EditKontakt (mod,size-1);
         break;
     }
     case 51 :   // 51 - "3"
     {
+        cls();
         break;
     }
     default :
+        cls();
         break;
     };
 
@@ -124,4 +123,30 @@ void AddKon(Person **&mod, int &size, Person *TempPerson)
         mod = tmpmod;
     }
     mod[size-1]=TempPerson;    
+}
+void AddTel(char **&TelNumber, int &Numberoftel)
+{
+    char *tmp = new char [255];
+    std::cout<<"Input Telefon [] : ";
+    gets(tmp);
+    Numberoftel++;
+    if (Numberoftel==1)
+    {
+        char **TempNum = new char *[Numberoftel];
+        TempNum[Numberoftel-1] = new char [strlen(tmp)+1];
+        strcpy(TempNum[Numberoftel-1],tmp);
+        delete [] TelNumber;
+        TelNumber = TempNum;
+    }
+    else
+    {
+
+        char **TempNum = new char *[Numberoftel];
+        for (int i=0;i<(Numberoftel-1);i++)
+            TempNum[i]=TelNumber[i];
+        TempNum[Numberoftel-1] = new char [strlen(tmp)+1];
+        strcpy(TempNum[Numberoftel-1],tmp);
+        delete [] TelNumber;
+        TelNumber = TempNum;
+    }
 }
