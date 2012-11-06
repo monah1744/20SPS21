@@ -13,8 +13,16 @@ void ShowPerson (Person **&mod,int &size)
 void ShowKontakt (Person *&mod)
 {
     {
-        cout<<mod->Name.SurName<<"  "<<mod->Name.FirstName<<"  ";
-        if (mod->NumberOfTel>0) cout<<mod->TelNumber[0]<<"\n";
+        cout<<mod->Name.SurName<<"  "<<mod->Name.FirstName<<"  "<<mod->Name.SecondName<<" ";
+        if (mod->NumberOfTel>0)
+        {
+            cout<<"\nTel : \n";
+            for (int i=0;i<mod->NumberOfTel;i++)
+            {
+                cout<<"\t"<<mod->TelNumber[i]<<endl;
+            }
+        }
+
     }
 }
 
@@ -32,14 +40,14 @@ void DeletePerson (Person **&mod, int &size)
 
 int Index(int size)
 {
-    int tmp;
+    int N;
     cout<<"Введите индекс контакта "<<size<<" : ";
-    cin>>tmp;
+    cin>>N;
     cin.ignore();
-    if ((tmp>0)||(tmp<=size))
+    if ((N>0)&&(N<=size))
     {
-        tmp--;
-        return tmp;
+        N--;
+        return N;
     }
     else 
     {
@@ -52,7 +60,7 @@ int Index(int size)
 void cls()
 {
 #ifdef linux
-    system("clear");
+    //system("clear");
 #endif
 #ifdef windows
     system("cls");

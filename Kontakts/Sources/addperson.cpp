@@ -51,7 +51,23 @@ void AddKontakt (Person **&mod, int &size)
 	while (check);
     
 	//============================================================
-	check = true;
+    TempPerson->Name.SecondName = new char [1];
+    strcpy(TempPerson->Name.SecondName,"");
+    TempPerson->Bussines.Email = new char [1];
+    strcpy(TempPerson->Bussines.Email,"");
+    TempPerson->Bussines.ICQ = new char [1];
+    strcpy(TempPerson->Bussines.ICQ,"");
+    TempPerson->Bussines.Jabber = new char [1];
+    strcpy(TempPerson->Bussines.Jabber,"");
+    TempPerson->Bussines.Skype = new char [1];
+    strcpy(TempPerson->Bussines.Skype,"");
+    TempPerson->Birthday.Day=-1;
+    TempPerson->Birthday.Month=-1;
+    TempPerson->Birthday.Year=-1;
+    //============================================================
+
+
+    check = true;
     int Key;
     cls();
     do

@@ -12,8 +12,12 @@ void EditKontakt (Person **&mod, int index)
         cout<<"Name [ \""<<&mod[index]->Name.FirstName<<"\" ] : ";
         cout<<"Name [ \""<<mod[index]->Name.FirstName<<"\" ] : ";
 		gets(tmp);
-        cout<<endl<<tmp<<endl;
-        cout<<endl<<strlen(tmp)<<endl;
+        cout<<endl<<"gets - "<<tmp<<endl;
+        cout<<endl<<"lenght - "<<strlen(tmp)<<endl;
+        cout<<endl<<"size First - "<<sizeof(mod[index]->Name.FirstName)<<endl;
+        cout<<endl<<"lenght Second - "<<strlen(mod[index]->Name.SecondName)<<endl;
+        cout<<endl<<"size Second - "<<sizeof(mod[index]->Name.SecondName)<<endl;
+
         if (strlen(tmp))
         {
             cout<<endl<<"Отработка delete"<<endl;
@@ -25,15 +29,15 @@ void EditKontakt (Person **&mod, int index)
         }
         cout<<"second\n";
         //cout<<"Second Name [ \""<<&mod[index]->Name.SecondName<<"\" ] : ";
-        cout<<strlen(mod[index]->Name.SecondName)<<" -strlen ";
-        cout<<"Second Name [ \""<<mod[index]->Name.SecondName<<"\" ] : ";
-		gets(tmp);
-        if (strlen(tmp))
-        {
-            delete [] mod[index]->Name.SecondName;
-            mod[index]->Name.SecondName = new char [strlen(tmp)+1];
-            strcpy(mod[index]->Name.SecondName,tmp);
-        }
+        //cout<<strlen(mod[index]->Name.SecondName)<<" -strlen ";
+        //cout<<"Second Name [ \""<<mod[index]->Name.SecondName<<"\" ] : ";
+		//gets(tmp);
+        //if (strlen(tmp))
+        //{
+        //    delete [] mod[index]->Name.SecondName;
+        //    mod[index]->Name.SecondName = new char [strlen(tmp)+1];
+        //    strcpy(mod[index]->Name.SecondName,tmp);
+        //}
         
         
         
