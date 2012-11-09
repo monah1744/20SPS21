@@ -14,10 +14,10 @@ void EditKontakt (Person **&mod, int index)
       do
       {
           ShowKontakt(mod[index]);
-          std::cout<<"1 - Add telefon\t2 - Edit fields\t3 - Exit\nInput Numder : ";
+          std::cout<<"1 - Add telefon\t2 - Del telefon\t3 - Edit fields\t9 - Exit\nInput Numder : ";
           Key = getchar();
           std::cin.ignore();
-          if ((Key>48)&&(Key<52)) check=false;
+          if (((Key>48)&&(Key<52))||(Key==57)) check=false;
           else
           {
               cls();
@@ -37,7 +37,13 @@ void EditKontakt (Person **&mod, int index)
           check=true;
           break;
       }
-      case 50 :   // 50 - "2"
+      case 50 :   // 52 - "2"
+      {
+          cls();
+          DeleteTel(mod[index]->TelNumber,mod[index]->NumberOfTel);
+          break;
+      }
+      case 51 :   // 51 - "3"
       {
           cls();
           cout<<"Name [ \""<<mod[index]->Name.FirstName<<"\" ] : ";
@@ -102,7 +108,6 @@ void EditKontakt (Person **&mod, int index)
                   mod[index]->Birthday.Year=atoi(tmp);
                   if (mod[index]->Birthday.Year==0) mod[index]->Birthday.Year=-1;
               }
-              cin>>mod[index]->Birthday.Year;
           }
           else
           {
@@ -172,7 +177,7 @@ void EditKontakt (Person **&mod, int index)
           check=true;
           break;
       }
-      case 51 :   // 51 - "3"
+      case 57 :   // 57 - "9"
       {
           cls();
           check=false;

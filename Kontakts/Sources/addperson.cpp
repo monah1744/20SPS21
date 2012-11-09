@@ -135,7 +135,7 @@ void AddTel(char **&TelNumber, int &Numberoftel)
         char **TempNum = new char *[Numberoftel];
         TempNum[Numberoftel-1] = new char [strlen(tmp)+1];
         strcpy(TempNum[Numberoftel-1],tmp);
-        delete [] TelNumber;
+        //delete [] TelNumber;
         TelNumber = TempNum;
     }
     else

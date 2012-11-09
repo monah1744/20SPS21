@@ -20,45 +20,44 @@ int main(int argc, char *argv[])
     {
         cout<<"1 - Show\t2 - Add\t\t3 - Edit\t4 - Search\t5 - Delete\t9 - Quit\nInput Number : ";
         Key = getchar();
-        cls();
         cin.ignore();
         switch (Key)
         {
             case 49 : // 49 - 1
             {
+                cls();
                 ShowPerson (mas, size);
                 break;
             }
             case 50 : // 50 - 2
             {
                 AddKontakt (mas, size);
-                cls();
                 break;
             }
             case 51 : // 51 - 3
             {
                 EditKontakt (mas, Index(size));
-                cls();
                 break;
             }
             case 52 : // 52 - 4
             {
                 SearchPerson (mas, size);
-                cls();
                 break;
             }        
             case 53 : // 53 - 5
             {
                 DeletePerson (mas, size);
-                cls();
                 break;
             }   
             case 57 : // 57 - 9
             {
                 chck=false;
-                cls();
                 if (size>0) delete [] mas;
                 break;
+            }
+            default :
+            {
+                cls();
             }
         };
     }

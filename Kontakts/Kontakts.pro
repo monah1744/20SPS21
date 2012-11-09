@@ -18,7 +18,8 @@ TEMPLATE = app
 SOURCES += main.cpp \
     Sources/editperson.cpp \
     Sources/addperson.cpp \
-    Sources/showperson.cpp
+    Sources/showperson.cpp \
+    Sources/deleteperson.cpp
 
 HEADERS += \
     Header/contacts.h

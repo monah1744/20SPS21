@@ -13,18 +13,15 @@ void ShowPerson (Person **&mod,int &size)
 void ShowKontakt (Person *&mod)
 {
     {
-        cout<<mod->Name.SurName<<"  "<<mod->Name.FirstName<<"  "<<mod->Name.SecondName<<" ";
+        cout<<mod->Name.SurName<<"  "<<mod->Name.FirstName<<"  "<<mod->Name.SecondName<<" \n";
         if (mod->NumberOfTel>0)
         {
-            cout<<"\nTel : \n";
-            for (int i=0;i<mod->NumberOfTel;i++)
-            {
-                cout<<"\t"<<mod->TelNumber[i]<<endl;
-            }
+            cout<<"Tel : \n";
+            ShowTel(mod->TelNumber,mod->NumberOfTel);
         }
         if (mod->Birthday.Day>0||mod->Birthday.Month>0||mod->Birthday.Year>0)
         {
-            cout<<"BirthDay : "<<mod->Birthday.Day<<" - "<<mod->Birthday.Month<<" - "<<mod->Birthday.Year<<endl;
+            cout<<"BirthDay : "<<mod->Birthday.Day<<"."<<mod->Birthday.Month<<"."<<mod->Birthday.Year<<endl;
         }
         if (strlen(mod->Bussines.Email)>0) cout<<"Email : "<<mod->Bussines.Email<<endl;
         if (strlen(mod->Bussines.ICQ)>0) cout<<"ICQ : "<<mod->Bussines.ICQ<<endl;
@@ -33,11 +30,11 @@ void ShowKontakt (Person *&mod)
     }
 }
 
-void ShowTel(Person *&mod)
+void ShowTel(char **&TelNumber, int &Numberoftel)
 {
-    for (int i=0;i<mod->NumberOfTel;i++)
+    for (int i=0;i<Numberoftel;i++)
     {
-        cout<<"\t"<<mod->TelNumber[i]<<endl;
+        cout<<"\t"<<i+1<<" -\t"<<TelNumber[i]<<endl;
     }
 }
 
@@ -47,10 +44,7 @@ void SearchPerson (Person **&mod, int &size)
     
 }
 
-void DeletePerson (Person **&mod, int &size)
-{
-    
-}
+
 
 int Index(int size)
 {

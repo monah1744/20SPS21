@@ -34,10 +34,11 @@ void AddKontakt (Person **&mod, int &size);
 void AddTel(char **&TelNumber, int &Numberoftel);
 void ShowPerson (Person **&mod, int &size);
 void ShowKontakt (Person *&mod);
-void ShowTel(Person *&mod);
+void ShowTel(char **&TelNumber, int &Numberoftel);
 void EditKontakt (Person **&mod, int index);
 void SearchPerson (Person **&mod, int &size);
 void DeletePerson (Person **&mod, int &size);
+void DeleteTel (char **&TelNumber, int &Numberoftel);
 void cls();
 int Index(int size);
 
