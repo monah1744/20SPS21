@@ -41,7 +41,13 @@ void ShowTel(char **&TelNumber, int &Numberoftel)
 
 void SearchPerson (Person **&mod, int &size)
 {
-    
+    cout<<"Input part of (Name, Surname, Telnumber) : ";
+    char *tmp= new char [255];
+    gets(tmp);
+    for (int i=0;i<size;i++)
+    {
+
+    }
 }
 
 
