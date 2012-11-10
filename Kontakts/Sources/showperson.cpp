@@ -1,5 +1,7 @@
 #include <Header/contacts.h>
 
+#include <string.h>
+
 using namespace std;
 void ShowPerson (Person **&mod,int &size)
 {
@@ -38,19 +40,55 @@ void ShowTel(char **&TelNumber, int &Numberoftel)
     }
 }
 
-
 void SearchPerson (Person **&mod, int &size)
 {
-    cout<<"Input part of (Name, Surname, Telnumber) : ";
+    cls();
+    cout<<"Input part of (Name, Surname) : ";
     char *tmp= new char [255];
     gets(tmp);
+    int ch=0;
     for (int i=0;i<size;i++)
     {
-
+        if (strstr(mod[i]->Name.FirstName,tmp)||strstr(mod[i]->Name.SurName,tmp))
+        {
+            cout<<i+1<<" -\t"<<mod[i]->Name.SurName<<" "<<mod[i]->Name.FirstName<<" ";
+            if (mod[i]->NumberOfTel) cout<<mod[i]->TelNumber[0];
+            ch++;
+            cout<<endl;
+        }
     }
+    if (ch)
+        cout<<"Found "<<ch<<" results"<<endl;
+    else
+        cout<<"Not results"<<endl;
 }
 
+void DetailsPerson (Person **&mod, int &size)
+{
+    cls();
+    ShowKontakt(mod[Index(size)]);
+}
 
+void BirthdayPerson(Person **&mod, int &size)
+{
+    cls();
+    int month;
+    cout<<"Input Month : ";
+    cin>>month;
+    cin.ignore();
+    if (month>0&&month<13)
+    for (int i=0;i<size;i++)
+    {
+        if (mod[i]->Birthday.Month==month)
+        {
+            cout<<i+1<<" -\t"<<mod[i]->Name.SurName<<" "<<mod[i]->Name.FirstName<<" -\t";
+            cout<<mod[i]->Birthday.Day<<"."<<mod[i]->Birthday.Month<<"."<<mod[i]->Birthday.Year;
+            cout<<endl;
+        }
+    }
+    else
+        cout<<"Out of range"<<endl;
+}
 
 int Index(int size)
 {

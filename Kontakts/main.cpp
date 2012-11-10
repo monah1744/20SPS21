@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     bool chck=true;
     do
     {
-        cout<<"1 - Show\t2 - Add\t\t3 - Edit\t4 - Search\t5 - Delete\t9 - Quit\nInput Number : ";
+        cout<<"1 - Show\t2 - Add\t\t3 - Edit\t4 - Search\t5 - Details\t6 - Delete\t7 - Birthday\t9 - Quit\nInput Number : ";
         Key = getchar();
         cin.ignore();
         switch (Key)
@@ -46,9 +46,19 @@ int main(int argc, char *argv[])
             }        
             case 53 : // 53 - 5
             {
+                DetailsPerson (mas, size);
+                break;
+            }
+            case 54 :   //54 - 6
+            {
                 DeletePerson (mas, size);
                 break;
-            }   
+            }
+            case 55 :   //55 - 7
+            {
+                BirthdayPerson(mas, size);
+                break;
+            }
             case 57 : // 57 - 9
             {
                 chck=false;
@@ -59,7 +69,7 @@ int main(int argc, char *argv[])
             {
                 cls();
             }
-        };
+        }
     }
     while (chck);
     //------------------------------------------------------------
